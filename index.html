@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dashboard de rendimiento de afiliación para una creadora de contenido."
+    />
+    <title>Dashboard de creadora · Studio Social</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="min-h-screen bg-[#f7f8fc] font-sans text-slate-900 antialiased">
+    <a
+      href="#contenido"
+      class="sr-only z-50 rounded-lg bg-white px-4 py-3 text-sm font-semibold text-violet-700 shadow-lg focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+    >
+      Saltar al contenido
+    </a>
+
+    <div class="min-h-screen lg:grid lg:grid-cols-[248px_minmax(0,1fr)]">
+      <aside class="border-b border-slate-200 bg-white lg:border-b-0 lg:border-r">
+        <div
+          class="flex items-center justify-between gap-4 px-5 py-4 sm:px-7 lg:sticky lg:top-0 lg:h-screen lg:flex-col lg:items-stretch lg:justify-start lg:px-5 lg:py-7"
+        >
+          <a href="#inicio" class="flex items-center gap-3" aria-label="Studio Social, inicio">
+            <span class="grid size-10 place-items-center rounded-xl bg-violet-600 text-white shadow-sm shadow-violet-200">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-5">
+                <path d="M4 17.5 9.5 12l3.5 3.5L20 8.5M14.5 8.5H20V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span>
+              <span class="block text-sm font-bold tracking-tight text-slate-900">studio social</span>
+              <span class="block text-xs text-slate-500">Creator dashboard</span>
+            </span>
+          </a>
+
+          <nav aria-label="Navegación principal" class="lg:mt-12">
+            <p class="mb-3 hidden px-3 text-[11px] font-semibold tracking-[0.16em] text-slate-400 uppercase lg:block">
+              Espacio de trabajo
+            </p>
+            <ul class="flex items-center gap-1 lg:flex-col lg:items-stretch">
+              <li>
+                <a
+                  href="#resumen"
+                  aria-current="page"
+                  aria-label="Resumen"
+                  class="flex items-center gap-3 rounded-xl bg-violet-50 px-3 py-2.5 text-sm font-semibold text-violet-700"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px] shrink-0">
+                    <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" />
+                    <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" />
+                    <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" />
+                    <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7" />
+                  </svg>
+                  <span class="hidden sm:inline">Resumen</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#productos"
+                  aria-label="Productos"
+                  class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px] shrink-0">
+                    <path d="M4 8.5h16l-1.2 11H5.2L4 8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                    <path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                  </svg>
+                  <span class="hidden sm:inline">Productos</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#plataformas"
+                  aria-label="Plataformas"
+                  class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px] shrink-0">
+                    <path d="M4 19.5V10m8 9.5V4.5m8 15v-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                    <path d="M2.5 19.5h19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                  </svg>
+                  <span class="hidden sm:inline">Plataformas</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#alertas"
+                  aria-label="Alertas"
+                  class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-500 transition hover:bg-slate-50 hover:text-slate-900"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px] shrink-0">
+                    <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span class="hidden sm:inline">Alertas</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="hidden rounded-2xl bg-slate-50 p-4 lg:mt-auto lg:block">
+            <div class="flex items-center gap-3">
+              <span class="grid size-10 place-items-center rounded-full bg-[#f2d9cb] text-sm font-bold text-[#764b3c]">LM</span>
+              <span class="min-w-0">
+                <span class="block truncate text-sm font-semibold text-slate-800">Lucía Martín</span>
+                <span class="block text-xs text-slate-500">Creadora · lifestyle</span>
+              </span>
+            </div>
+            <p class="mt-4 text-xs leading-5 text-slate-500">Panel de afiliación · Datos de demostración</p>
+          </div>
+        </div>
+      </aside>
+
+      <main id="contenido" class="min-w-0 px-4 py-6 sm:px-7 sm:py-8 lg:px-10 lg:py-10">
+        <div id="inicio" class="mx-auto max-w-[1440px]">
+          <header class="mb-8 flex flex-col gap-5 sm:mb-9 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="mb-2 text-sm font-medium text-violet-700">Mi rendimiento</p>
+              <h1 class="text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">¡Hola, Lucía! <span aria-hidden="true">✦</span></h1>
+              <p class="mt-1.5 text-sm text-slate-500">Aquí tienes el resumen de tu actividad como creadora.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-800">
+                <span class="size-1.5 rounded-full bg-emerald-500"></span>
+                Periodo cerrado
+              </span>
+              <div
+                aria-label="Periodo seleccionado: últimos 30 días"
+                class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-sm"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-4 text-slate-500">
+                  <rect x="3.5" y="5" width="17" height="15.5" rx="2.5" stroke="currentColor" stroke-width="1.7" />
+                  <path d="M7.5 3.5v3M16.5 3.5v3M3.5 9.5h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                </svg>
+                Últimos 30 días
+                <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" class="size-4 text-slate-400">
+                  <path d="m5 7.5 5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </header>
+
+          <section id="resumen" aria-labelledby="resumen-titulo" class="mb-8">
+            <div class="mb-4 flex items-end justify-between gap-4">
+              <div>
+                <h2 id="resumen-titulo" class="text-lg font-bold tracking-tight text-slate-900">Resumen del periodo</h2>
+                <p class="mt-1 text-sm text-slate-500">Tus resultados de afiliación en un vistazo.</p>
+              </div>
+              <span class="hidden text-xs text-slate-400 sm:inline">Datos simulados</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:p-6">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-medium text-slate-500">Comisiones totales</p>
+                    <p class="mt-3 text-3xl font-bold tracking-tight text-slate-950">1.020 <span class="text-xl font-semibold text-slate-500">€</span></p>
+                  </div>
+                  <span class="grid size-11 place-items-center rounded-xl bg-violet-50 text-violet-700">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-5">
+                      <path d="M12 3.5v17m5-13.5c0-1.7-2.2-3-5-3S7 5.3 7 7s2.2 3 5 3 5 1.3 5 3-2.2 3-5 3-5-1.3-5-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span class="text-xs text-slate-500">Comisión fija del periodo</span>
+                  <span class="rounded-full bg-violet-50 px-2.5 py-1 text-xs font-semibold text-violet-700">15% por venta</span>
+                </div>
+              </article>
+
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:p-6">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-medium text-slate-500">Ventas totales</p>
+                    <p class="mt-3 text-3xl font-bold tracking-tight text-slate-950">90</p>
+                  </div>
+                  <span class="grid size-11 place-items-center rounded-xl bg-sky-50 text-sky-700">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-5">
+                      <path d="M4 8.5h16l-1.2 11H5.2L4 8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                      <path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span class="text-xs text-slate-500">Productos A, B y C</span>
+                  <span class="text-xs font-semibold text-slate-600">90 unidades</span>
+                </div>
+              </article>
+
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:col-span-2 sm:p-6 xl:col-span-1">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <p class="text-sm font-medium text-slate-500">Conversión sobre clics</p>
+                    <p class="mt-3 text-3xl font-bold tracking-tight text-slate-950">6<span class="text-xl font-semibold text-slate-500">%</span></p>
+                  </div>
+                  <span class="grid size-11 place-items-center rounded-xl bg-emerald-50 text-emerald-700">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-5">
+                      <path d="M4 17.5 9.5 12l3.5 3.5L20 8.5M14.5 8.5H20V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                  <span class="text-xs text-slate-500">90 ventas de 1.500 clics</span>
+                  <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">1 venta / 17 clics</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section aria-labelledby="drivers-titulo" class="mb-8">
+            <div class="mb-4">
+              <h2 id="drivers-titulo" class="text-lg font-bold tracking-tight text-slate-900">Qué impulsa tus resultados</h2>
+              <p class="mt-1 text-sm text-slate-500">Rendimiento por plataforma, producto y etapa del embudo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:p-6">
+                <div class="mb-5 flex items-start justify-between gap-3">
+                  <div>
+                    <h3 class="font-bold text-slate-900">Rendimiento por plataforma</h3>
+                    <p class="mt-1 text-xs text-slate-500">Comisiones atribuidas · total 1.020 €</p>
+                  </div>
+                  <span class="rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-500">Simulado</span>
+                </div>
+                <div class="space-y-5">
+                  <div>
+                    <div class="mb-2 flex items-center justify-between gap-3 text-sm">
+                      <span class="font-medium text-slate-700">Instagram <span class="ml-1 text-xs text-slate-400">· 40 ventas</span></span>
+                      <span class="font-semibold text-slate-900">450 € <span class="text-xs font-normal text-slate-400">44,1%</span></span>
+                    </div>
+                    <div role="meter" aria-label="Instagram, 44,1 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="44.1" class="h-2.5 overflow-hidden rounded-full bg-slate-100">
+                      <div class="h-full w-[44.1%] rounded-full bg-violet-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-2 flex items-center justify-between gap-3 text-sm">
+                      <span class="font-medium text-slate-700">TikTok <span class="ml-1 text-xs text-slate-400">· 30 ventas</span></span>
+                      <span class="font-semibold text-slate-900">330 € <span class="text-xs font-normal text-slate-400">32,4%</span></span>
+                    </div>
+                    <div role="meter" aria-label="TikTok, 32,4 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="32.4" class="h-2.5 overflow-hidden rounded-full bg-slate-100">
+                      <div class="h-full w-[32.4%] rounded-full bg-sky-500"></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-2 flex items-center justify-between gap-3 text-sm">
+                      <span class="font-medium text-slate-700">YouTube <span class="ml-1 text-xs text-slate-400">· 20 ventas</span></span>
+                      <span class="font-semibold text-slate-900">240 € <span class="text-xs font-normal text-slate-400">23,5%</span></span>
+                    </div>
+                    <div role="meter" aria-label="YouTube, 23,5 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="23.5" class="h-2.5 overflow-hidden rounded-full bg-slate-100">
+                      <div class="h-full w-[23.5%] rounded-full bg-rose-400"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-5 border-t border-slate-100 pt-4 text-xs leading-5 text-slate-500">Desglose simulado: 1.020 € en comisiones y 90 ventas entre las tres plataformas.</p>
+              </article>
+
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:p-6">
+                <div class="mb-5 flex items-start justify-between gap-3">
+                  <div>
+                    <h3 class="font-bold text-slate-900">Rendimiento por producto</h3>
+                    <p class="mt-1 text-xs text-slate-500">Comisiones generadas en el periodo</p>
+                  </div>
+                  <a href="#productos" class="text-xs font-semibold text-violet-700 hover:text-violet-900">Ver detalle <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-amber-50 text-sm font-bold text-amber-700">A</span>
+                    <div class="min-w-0 flex-1">
+                      <div class="mb-1.5 flex items-center justify-between gap-3 text-sm">
+                        <span class="truncate font-medium text-slate-700">Producto A <span class="text-xs text-slate-400">· 40 ventas</span></span>
+                        <span class="shrink-0 font-semibold text-slate-900">300 €</span>
+                      </div>
+                      <div role="meter" aria-label="Producto A, 29,4 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="29.4" class="h-2 overflow-hidden rounded-full bg-slate-100">
+                        <div class="h-full w-[29.4%] rounded-full bg-amber-400"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-indigo-50 text-sm font-bold text-indigo-700">B</span>
+                    <div class="min-w-0 flex-1">
+                      <div class="mb-1.5 flex items-center justify-between gap-3 text-sm">
+                        <span class="truncate font-medium text-slate-700">Producto B <span class="text-xs text-slate-400">· 20 ventas</span></span>
+                        <span class="shrink-0 font-semibold text-slate-900">360 €</span>
+                      </div>
+                      <div role="meter" aria-label="Producto B, 35,3 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35.3" class="h-2 overflow-hidden rounded-full bg-slate-100">
+                        <div class="h-full w-[35.3%] rounded-full bg-indigo-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-teal-50 text-sm font-bold text-teal-700">C</span>
+                    <div class="min-w-0 flex-1">
+                      <div class="mb-1.5 flex items-center justify-between gap-3 text-sm">
+                        <span class="truncate font-medium text-slate-700">Producto C <span class="text-xs text-slate-400">· 30 ventas</span></span>
+                        <span class="shrink-0 font-semibold text-slate-900">360 €</span>
+                      </div>
+                      <div role="meter" aria-label="Producto C, 35,3 por ciento de las comisiones" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35.3" class="h-2 overflow-hidden rounded-full bg-slate-100">
+                        <div class="h-full w-[35.3%] rounded-full bg-teal-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="mt-5 border-t border-slate-100 pt-4 text-xs leading-5 text-slate-500">Cada importe aplica una comisión del 15% al precio indicado.</p>
+              </article>
+
+              <article class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm shadow-slate-200/40 sm:col-span-2 sm:p-6">
+                <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h3 class="font-bold text-slate-900">Embudo de conversión</h3>
+                    <p class="mt-1 text-xs text-slate-500">Del alcance a la compra · valores simulados</p>
+                  </div>
+                  <span class="text-xs text-slate-400">Últimos 30 días</span>
+                </div>
+                <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  <div class="rounded-xl bg-slate-50 p-4">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-medium text-slate-500">Personas alcanzadas</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-[11px] font-semibold text-slate-500">TOFU</span>
+                    </div>
+                    <p class="mt-3 text-2xl font-bold tracking-tight text-slate-900">50.000</p>
+                    <div role="meter" aria-label="Personas alcanzadas, 100 por ciento de la base del embudo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" class="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200">
+                      <div class="h-full w-full rounded-full bg-violet-500"></div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl bg-slate-50 p-4">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-medium text-slate-500">Clics en enlaces</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-[11px] font-semibold text-slate-500">MOFU</span>
+                    </div>
+                    <p class="mt-3 text-2xl font-bold tracking-tight text-slate-900">1.500</p>
+                    <div role="meter" aria-label="Clics, 3 por ciento de las personas alcanzadas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="3" class="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200">
+                      <div class="h-full w-[3%] min-w-2 rounded-full bg-sky-500"></div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl bg-slate-50 p-4">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-medium text-slate-500">Ventas completadas</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-[11px] font-semibold text-slate-500">BOFU</span>
+                    </div>
+                    <p class="mt-3 text-2xl font-bold tracking-tight text-slate-900">90</p>
+                    <div role="meter" aria-label="Ventas, 6 por ciento de los clics" aria-valuemin="0" aria-valuemax="100" aria-valuenow="6" class="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200">
+                      <div class="h-full w-[6%] min-w-2 rounded-full bg-emerald-500"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
+                  <span>CTR <strong class="font-semibold text-slate-900">3%</strong></span>
+                  <span>Conversión sobre alcance <strong class="font-semibold text-slate-900">0,18%</strong></span>
+                  <span>Conversión sobre clics <strong class="font-semibold text-slate-900">6%</strong></span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section aria-labelledby="detalle-titulo" class="mb-8">
+            <div class="mb-4">
+              <h2 id="detalle-titulo" class="text-lg font-bold tracking-tight text-slate-900">Detalle de actividad</h2>
+              <p class="mt-1 text-sm text-slate-500">Productos y canales incluidos en el resumen.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-4 xl:grid-cols-2">
+              <article id="productos" class="min-w-0 rounded-2xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/40">
+                <div class="flex items-center justify-between gap-3 px-5 py-5 sm:px-6">
+                  <div>
+                    <h3 class="font-bold text-slate-900">Productos</h3>
+                    <p class="mt-1 text-xs text-slate-500">Comisión simulada: 15% por venta</p>
+                  </div>
+                  <span class="rounded-full bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-500">3 productos</span>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full min-w-[430px] text-left text-sm">
+                    <caption class="sr-only">Ventas y comisiones por producto durante el periodo</caption>
+                    <thead class="border-y border-slate-100 bg-slate-50/80 text-xs font-semibold text-slate-500">
+                      <tr>
+                        <th scope="col" class="px-5 py-3 sm:px-6">Producto</th>
+                        <th scope="col" class="px-3 py-3 text-right">Precio</th>
+                        <th scope="col" class="px-3 py-3 text-right">Ventas</th>
+                        <th scope="col" class="px-5 py-3 text-right sm:px-6">Comisión</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">Producto A</th>
+                        <td class="px-3 py-3.5 text-right">50 €</td>
+                        <td class="px-3 py-3.5 text-right">40</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">300 €</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">Producto B</th>
+                        <td class="px-3 py-3.5 text-right">120 €</td>
+                        <td class="px-3 py-3.5 text-right">20</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">360 €</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">Producto C</th>
+                        <td class="px-3 py-3.5 text-right">80 €</td>
+                        <td class="px-3 py-3.5 text-right">30</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">360 €</td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="border-t border-slate-200 bg-slate-50/80 font-bold text-slate-900">
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 sm:px-6">Total</th>
+                        <td class="px-3 py-3.5 text-right">—</td>
+                        <td class="px-3 py-3.5 text-right">90</td>
+                        <td class="px-5 py-3.5 text-right sm:px-6">1.020 €</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <p class="px-5 py-4 text-xs leading-5 text-slate-500 sm:px-6">Importe de ventas simulado: 6.800 € · comisión total: 15% del importe.</p>
+              </article>
+
+              <article id="plataformas" class="min-w-0 rounded-2xl border border-slate-200/80 bg-white shadow-sm shadow-slate-200/40">
+                <div class="flex items-center justify-between gap-3 px-5 py-5 sm:px-6">
+                  <div>
+                    <h3 class="font-bold text-slate-900">Plataformas</h3>
+                    <p class="mt-1 text-xs text-slate-500">Actividad atribuida · datos simulados</p>
+                  </div>
+                  <span class="rounded-full bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-500">3 canales</span>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full min-w-[430px] text-left text-sm">
+                    <caption class="sr-only">Clics, ventas y comisiones atribuidos a cada plataforma</caption>
+                    <thead class="border-y border-slate-100 bg-slate-50/80 text-xs font-semibold text-slate-500">
+                      <tr>
+                        <th scope="col" class="px-5 py-3 sm:px-6">Canal</th>
+                        <th scope="col" class="px-3 py-3 text-right">Clics</th>
+                        <th scope="col" class="px-3 py-3 text-right">Ventas</th>
+                        <th scope="col" class="px-5 py-3 text-right sm:px-6">Comisión</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">Instagram</th>
+                        <td class="px-3 py-3.5 text-right">700</td>
+                        <td class="px-3 py-3.5 text-right">40</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">450 €</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">TikTok</th>
+                        <td class="px-3 py-3.5 text-right">500</td>
+                        <td class="px-3 py-3.5 text-right">30</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">330 €</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 font-medium text-slate-800 sm:px-6">YouTube</th>
+                        <td class="px-3 py-3.5 text-right">300</td>
+                        <td class="px-3 py-3.5 text-right">20</td>
+                        <td class="px-5 py-3.5 text-right font-semibold text-slate-900 sm:px-6">240 €</td>
+                      </tr>
+                    </tbody>
+                    <tfoot class="border-t border-slate-200 bg-slate-50/80 font-bold text-slate-900">
+                      <tr>
+                        <th scope="row" class="px-5 py-3.5 sm:px-6">Total</th>
+                        <td class="px-3 py-3.5 text-right">1.500</td>
+                        <td class="px-3 py-3.5 text-right">90</td>
+                        <td class="px-5 py-3.5 text-right sm:px-6">1.020 €</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+                <p class="px-5 py-4 text-xs leading-5 text-slate-500 sm:px-6">Instagram, TikTok y YouTube suman el total del embudo y de las comisiones.</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="alertas" aria-labelledby="alertas-titulo" class="mb-8">
+            <div class="mb-4">
+              <h2 id="alertas-titulo" class="text-lg font-bold tracking-tight text-slate-900">Alertas operacionales</h2>
+              <p class="mt-1 text-sm text-slate-500">Recordatorios para cuidar el seguimiento de tus campañas.</p>
+            </div>
+            <div class="grid grid-cols-1 gap-3 md:grid-cols-2">
+              <article class="flex gap-3 rounded-2xl border border-amber-200 bg-amber-50/70 p-4 sm:p-5">
+                <span class="grid size-9 shrink-0 place-items-center rounded-xl bg-amber-100 text-amber-800">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px]">
+                    <path d="M12 8v4m0 4h.01M10.3 4.7 2.8 18a1.5 1.5 0 0 0 1.3 2.2h15.8a1.5 1.5 0 0 0 1.3-2.2L13.7 4.7a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-sm font-semibold text-amber-950">Revisar enlaces de afiliación</h3>
+                  <p class="mt-1 text-xs leading-5 text-amber-900/80">Recordatorio simulado: comprueba que los enlaces de Instagram, TikTok y YouTube sigan activos y etiquetados.</p>
+                </div>
+              </article>
+              <article class="flex gap-3 rounded-2xl border border-sky-200 bg-sky-50/70 p-4 sm:p-5">
+                <span class="grid size-9 shrink-0 place-items-center rounded-xl bg-sky-100 text-sky-800">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" class="size-[18px]">
+                    <path d="M4 17.5 9.5 12l3.5 3.5L20 8.5M14.5 8.5H20V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="text-sm font-semibold text-sky-950">Oportunidad: Producto B</h3>
+                  <p class="mt-1 text-xs leading-5 text-sky-900/80">Con 360 € de comisión en 20 ventas, es el producto con mayor comisión por venta: 18 €. Dato calculado sobre las cifras simuladas.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <footer class="border-t border-slate-200 py-5 text-xs text-slate-500">
+            <p>Studio Social <span aria-hidden="true">·</span> Dashboard de demostración con datos simulados.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
